@@ -3,7 +3,7 @@
 //Deklarasi,panjang,lebar,dan tinggi
 $panjang =5;
 $lebar =4;
-$lebar =3;
+$tinggi =3;
 //Tentukan nilai panjang
 //Tentukan nilai lebar
 //Tentukan nilai tinggi
