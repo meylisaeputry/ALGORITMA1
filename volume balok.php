@@ -15,6 +15,3 @@ $volume=$panjang*$lebar*$lebar;
 //Tampilkan hasil perkalian
 echo "<br>hasil volume balok adalah=". $volume;
 //Selesai
-
-
-Echo $volume;
