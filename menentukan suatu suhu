@@ -1,0 +1,17 @@
+<?php
+$suhu = 30; // Misalnya suhu 30 derajat Celsius
+
+if ($suhu < 0) {
+    echo "Suhu di bawah titik beku.";
+} elseif ($suhu >= 0 && $suhu <= 20) {
+    echo "Suhu dingin.";
+} elseif ($suhu >= 21 && $suhu <= 30) {
+    echo "Suhu sedang.";
+} elseif ($suhu >= 31 && $suhu <= 40) {
+    echo "Suhu hangat.";
+} else {
+    echo "Suhu sangat panas.";
+}
+?>
+
+
