@@ -1,39 +1,12 @@
 <?php
-// Aktifkan error reporting untuk debugging
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-// Fungsi untuk konversi suhu
-function convertTemperature($suhu, $satuan) {
-    // Kondisi jika satuan suhu adalah Celcius
-    if ($satuan == 'C') {
-        $fahrenheit = ($suhu * 9/5) + 32;
-        $kelvin = $suhu + 273.15;
-        echo "Suhu dalam Fahrenheit: " . $fahrenheit . "°F<br>";
-        echo "Suhu dalam Kelvin: " . $kelvin . "K<br>";
-    }
-    // Kondisi jika satuan suhu adalah Fahrenheit
-    elseif ($satuan == 'F') {
-        $celcius = ($suhu - 32) * 5/9;
-        $kelvin = ($celcius + 273.15);
-        echo "Suhu dalam Celcius: " . $celcius . "°C<br>";
-        echo "Suhu dalam Kelvin: " . $kelvin . "K<br>";
-    }
-    // Kondisi jika satuan suhu adalah Kelvin
-    elseif ($satuan == 'K') {
-        $celcius = $suhu - 273.15;
-        $fahrenheit = ($celcius * 9/5) + 32;
-        echo "Suhu dalam Celcius: " . $celcius . "°C<br>";
-        echo "Suhu dalam Fahrenheit: " . $fahrenheit . "°F<br>";
-    }
-    // Kondisi jika satuan suhu tidak dikenal
-    else {
-        echo "Satuan suhu tidak dikenal.<br>";
+// Fungsi untuk mengecek bilangan
+function cekBilangan($bilangan) {
+    if ($bilangan > 10) {
+        echo "Bilangan " . $bilangan . " adalah bilangan positif.<br>";
+    } elseif ($bilangan < -5) {
+        echo "Bilangan " . $bilangan . " adalah bilangan negatif.<br>";
+    } else {
+        echo "Bilangan tersebut adalah 0.<br>";
     }
 }
-
-// Contoh penggunaan fungsi
-convertTemperature(100, 'C');
-convertTemperature(212, 'F');
-convertTemperature(373.15, 'K');
 ?>
