@@ -1,35 +1,38 @@
-php
 <?php
+// Aktifkan error reporting untuk debugging
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// Fungsi untuk konversi suhu
 function convertTemperature($suhu, $satuan) {
-    switch($satuan) {
-        case 'C':
-            $fahrenheit = ($suhu * 9/5) + 32;
-            $kelvin = $suhu + 273.15;
-            echo "Suhu dalam Fahrenheit: " . $fahrenheit . "°F\n";
-            echo "Suhu dalam Kelvin: " . $kelvin . "K\n";
-            break;
-
-        case 'F':
-            $celcius = ($suhu - 32) * 5/9;
-            $kelvin = ($celcius) + 273.15;
-            echo "Suhu dalam Celcius: " . $celcius . "°C\n";
-            echo "Suhu dalam Kelvin: " . $kelvin . "K\n";
-            break;
-
-        case 'K':
-            $celcius = $suhu - 273.15;
-            $fahrenheit = ($celcius * 9/5) + 32;
-            echo "Suhu dalam Celcius: " . $celcius . "°C\n";
-            echo "Suhu dalam Fahrenheit: " . $fahrenheit . "°F\n";
-            break;
-
-        default:
-            echo "Satuan suhu tidak dikenal.\n";
-            break;
+    // Kondisi jika satuan suhu adalah Celcius
+    if ($satuan == 'C') {
+        $fahrenheit = ($suhu * 9/5) + 32;
+        $kelvin = $suhu + 273.15;
+        echo "Suhu dalam Fahrenheit: " . $fahrenheit . "°F<br>";
+        echo "Suhu dalam Kelvin: " . $kelvin . "K<br>";
+    }
+    // Kondisi jika satuan suhu adalah Fahrenheit
+    elseif ($satuan == 'F') {
+        $celcius = ($suhu - 32) * 5/9;
+        $kelvin = ($celcius + 273.15);
+        echo "Suhu dalam Celcius: " . $celcius . "°C<br>";
+        echo "Suhu dalam Kelvin: " . $kelvin . "K<br>";
+    }
+    // Kondisi jika satuan suhu adalah Kelvin
+    elseif ($satuan == 'K') {
+        $celcius = $suhu - 273.15;
+        $fahrenheit = ($celcius * 9/5) + 32;
+        echo "Suhu dalam Celcius: " . $celcius . "°C<br>";
+        echo "Suhu dalam Fahrenheit: " . $fahrenheit . "°F<br>";
+    }
+    // Kondisi jika satuan suhu tidak dikenal
+    else {
+        echo "Satuan suhu tidak dikenal.<br>";
     }
 }
 
-// Contoh penggunaan:
+// Contoh penggunaan fungsi
 convertTemperature(100, 'C');
 convertTemperature(212, 'F');
 convertTemperature(373.15, 'K');
